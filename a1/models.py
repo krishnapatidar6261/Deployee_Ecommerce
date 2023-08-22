@@ -43,9 +43,7 @@ class Comment(models.Model):
 class Product(models.Model):
     seller=models.ForeignKey(User, on_delete=models.CASCADE)
     choice=(
-        ("Laptop","Laptop"),       
-        ("Accessories","Accessories"), 
-        ("Iron","Iron"), 
+        
         ("Electronics","Electronics"),  
         ("Men","Men"),  
         ("Women","Women"),  
@@ -53,8 +51,6 @@ class Product(models.Model):
         ("Home & Kitchens","Home & Kitchens"),  
         ("Books","Books"),  
         ("Other","Other"),  
-        
-       
     )
     product_category=models.CharField(max_length=50, choices=choice, default="Others")
     product_name=models.CharField(max_length=50)

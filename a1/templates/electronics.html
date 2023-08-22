@@ -99,50 +99,8 @@
               </div>
           </div> <!-- Slider -->
           
-          <div id="content"> <!-- Content -->
-              <div class="container">
-                  <div class="home-content">
-                      <div class="cat-offers">
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <div class="cat-sec-1">
-                                      <img src="https://target.scene7.com/is/image/Target/GUEST_06e0d698-df54-4ca1-8086-06e476db92f2" height=400px  width=400px  class="img-responsive" alt="">
-                                      <div class="cat-desc">
-                                          <div class="cat-inner">
-                                              <div class="cat-title">Iron</div>
-                                              <a href="{%url 'iron'%}" class="btn btn-border">Buy Now</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="cat-sec-2">
-                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn58HsxpO2R5jJZoncv8Re0nSc1SyCy_XgKQ&usqp=CAU" height=400px  width=400px  class="img-responsive" alt="">
-                                       <div class="cat-desc">
-                                           <div class="cat-inner">
-                                              <div class="cat-title">Laptop</div>
-                                              <a href="{%url 'laptop'%}" class="btn btn-border">Buy Now</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="cat-sec-3">
-                                      <img src="https://akns-images.eonline.com/eol_images/Entire_Site/2022724/rs_640x640-220824161754-4.png?fit=around%7C400:400&output-quality=90&crop=400:400;center,top" height=400px  width=400px  class="img-responsive" alt="">
-                                       <div class="cat-desc">
-                                           <div class="cat-inner">
-                                              <div class="cat-title">accessories</div>
-                                              <a href="{%url 'accessories'%}" class="btn btn-border">shop Now</a>
-                                           </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
               
-              <div class="newest">
+              <div class="newest" >
                   <div class="container">
                       <div class="newest-content">
                           <div class="newest-tab">
@@ -155,32 +113,47 @@
                               
                               <div id="myTabContent" class="tab-content">
                                   <div role="tabpanel" class="tab-pane fade in active" id="1" aria-labelledby="cat-1">
-                                      <div class="row clearfix">
+                                    <div class="row clearfix">
+                                        {%for i in product %}
                                           <div class="col-md-3 prdct-grid">
                                               <div class="product-fade">
 													<div class="product-fade-wrap">
-                                                        <div id="product-image8" class="owl-carousel owl-theme">
-                                                            <div class="item"><img src="{%static 'images/p-8.jpg'%}" alt="" class="img-responsive"></div>
+                                                        <div id="product-image">
+                                                            <div class="item"><img src="{{i.product_image.url}}" alt="Images" class="img-responsive" ></div>
                                                             
                                                         </div>
-														<div class="product-fade-ct">
+														<div class="product-fade-ct"><!-- Hover start-->
                                                             <div class="product-fade-control">
-                                                             <a href="" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
-                                                            </div>
+                                                                {%if request.session.email%}
+                                                                <div class="to-left">
+                                                               
+                                                                    <a href="{%url 'product-detail' pk=i.pk%}">View Detail</a>
+                                                                    <a href="{%url 'mywishlist'%}" class="btn btn-to-wishlist">View-Wishlist</a>
+                                                                </div>
+                                                                
+                                                                <div class="clearfix"></div>
+                                                                <a href="{%url 'add-to-cart' pk=i.pk%}" class="btn btn-to-cart"><span class="bag"></span><span>Add To cart</span><div class="clearfix"></div></a>
+                                                                {% else %}
+                                                                <a href="{%url 'login'%}" class="btn btn-to-cart"><span></span><span>Login for more Option</span><div class="clearfix"></div></a>
+                                                                {%endif%}
+                                                            </div><!-- Hover end-->
                                                             
 														</div>
 													</div>
                                               </div>
+                                              
                                               <div class="product-name">
-                                                  <a href="">Heels</a>
+                                                  <a href="{%url 'product-detail' pk=i.pk%}">{{i.product_name}}</a>
                                               </div>
                                               
                                               <div class="product-price">
-                                                  <span>$19.00</span> $15.00
+                                                   Rs {{i.product_price}}
                                               </div>
-                                            </div>
-
-                                        </div>
+                                          </div>
+                                        
+                                          {% endfor %}
+                                      </div>
+                                    
                                     </div>
                                 </div>
                             </div>

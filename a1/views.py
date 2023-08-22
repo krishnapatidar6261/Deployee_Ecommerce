@@ -52,6 +52,13 @@ def success(request):
 def cancel(request):
 	return render(request,'cancel.html')
 
+def myorder(request):
+    try:
+        user=User.objects.get(email=request.session['email'])
+        cart=Cart.objects.filter(user=user,payment_status=True)
+        return render(request,'myorder.html',{'cart':cart})
+    except:
+        return render(request,'login.html')
 
 def validate_email(request):
     email=request.GET.get('email')
@@ -350,7 +357,8 @@ def couple_dress(request):
 
 
 def electronics(request):               #electronics page functions
-    return render(request,'electronics.html')
+    product=Product.objects.filter(product_category="Electronics")
+    return render(request,'electronics.html',{'product':product})
 
 def iron(request):
     return render(request,'iron.html')
@@ -385,7 +393,7 @@ def home_kitchen(request):                             #home & kitchen page func
     return render(request,'home&kitchen.html',{'product':product})
 
 def more_stores(request):                             #more_stores page functions
-    return render(request,'more-stores.html')
+    return render(request,'index.html')
 
 
 

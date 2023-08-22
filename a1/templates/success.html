@@ -28,71 +28,14 @@
                   <div class="container">
                       <div class="row">
                           <div class="col-md-6 ct-desc">
-                              <h3>Direction</h3>
-                              <div class="post-content">
-                                  <h4>
-                                      <span>Believe is WooCommerce store</span> is the most popular for cloth . And it's available for at themeorest. Packed full of features, perfectly integrated into your self-hosted WordPress website.
-                                  </h4>
-                              </div>
-                              <p>Nunc eu consequat metus. Nunc ultrices maximus ipsum malesuada porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas fringilla nulla eu libero euismod condimentum. Sed eu rutrum ante. Sed ut lacus nec leo rhoncus scelerisque non eget nunc. </p>
-                              <h3 class="contact-loc">online store contact</h3>
-                              <div class="row loc-det">
-                                  <div class="col-md-4">
-                                      <p>
-                                          Phone: (941) 364-7748<br/>
-                                          Fax: (941) 364-2322<br/>
-                                          office@yourdomain.com<br/>
-                                          www.yourdomain.com<br/>
-                                      
-                                      </p>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p>
-                                          Phone: (941) 364-7748<br/>
-                                          Fax: (941) 364-2322<br/>
-                                          office@yourdomain.com<br/>
-                                          www.yourdomain.com<br/>
-                                      
-                                      </p>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p>
-                                      </p>
-                                  </div>
-                              </div>
+                              <h3 class="contact-loc">Payment Successfully <p>Go to <a href="{%url 'index'%}">HomePage</a> or <a href="{%url 'index'%}">MyCart</a></p></h3>
+                              
+                              
                           </div>
                           <div class="col-md-1">
                           </div>
                           <div class="col-md-5 ct-form">
-                              <h3 >Change Password</h3>
-                                                            
-                              <form class="contact-form" action="{%url 'change-password'%}" method="post" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                   {%if msg%}
-                                        <b  style="color: red">{{msg}}</b>
-                                    {%endif%}<br>
-                                  
-
-                                  
-                                  <div class="form-group">
-                                    <label for="old_pwd">Old Password</label>
-                                    <input type="password" class="form-control" name="old_pwd" id="cf_email" placeholder="Old Password">
-                                </div>
-                                  
-                                  <div class="form-group">
-                                    <label for="password">New Password*</label>
-                                    <input type="password" class="form-control" name="new_pwd"  placeholder=" New Password">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="cpassword">Confirm Password*</label>
-                                    <input type="password" class="form-control" name="cnew_pwd"  placeholder="Confirm Password">
-                                </div>
-
-                               
-                                  
-                                  <button type="submit" class="btn btn-blue">Change </button>
-                              </form>
+                              
                           </div>
                       </div>
                       
