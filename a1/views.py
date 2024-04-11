@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 stripe.api_key = settings.STRIPE_PRIVATE_KEY
-YOUR_DOMAIN = 'http://localhost:8000'
+YOUR_DOMAIN = 'https://pythonanywhere.com'
 
 
 @csrf_exempt
