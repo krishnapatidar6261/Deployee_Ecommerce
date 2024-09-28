@@ -132,8 +132,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'krishnapatidar6261@gmail.com'
-EMAIL_HOST_PASSWORD = 'spwh vkbr hjtf ojeo'
+EMAIL_HOST_USER = 'youremail.gmail.com'
+EMAIL_HOST_PASSWORD = 'gmail key'
 
-STRIPE_PUBLIC_KEY='pk_test_51NdrRaSFrpNPRRx9e6CabgkSHhz0V8oZvNwxE7diw4jiIwfwn19Wiz5i65CDh1t8tIbhf5AhLfz7tBlgWUcdrb6W00LYoI2MpE'
-STRIPE_PRIVATE_KEY='sk_test_51NdrRaSFrpNPRRx95pkQCXxJDTBiXfm8e8XhlV6u4imOt9YCDYc5S3FMxdmbMcxjbTE3dTXaUvqZgTl8BI9dK8rU00vgJbKb1w'
+STRIPE_PUBLIC_KEY='STRIPE_PUBLIC_KEY'
+STRIPE_PRIVATE_KEY='your STRIPE_PRIVATE_KEY'
